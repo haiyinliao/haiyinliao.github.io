@@ -302,9 +302,13 @@ ul.nav-toggle-categories {
   display: table;
 }
 .col-container {
-  margin-left: -12px;
-  margin-right: -12px;
-  padding: 24px 0;
+	padding: 24px 0;
+}
+@media (min-width: 992px) {
+	.col-container {
+	  	margin-left: -12px;
+	  	margin-right: -12px;
+	}
 }
 .col-sm-3, .col-sm-4 {
   min-height: 1
@@ -330,14 +334,7 @@ ul.nav-toggle-categories {
 }
 .compaign-01, .compaign-02 {
   position: relative;
-  margin: 0 12px;
-
-  /*border: 1px solid #333;*/
-}
-.compaign-01, .compaign-02 {
-  position: relative;
-  margin: 0 12px;
-
+  padding: 0 12px;
   /*border: 1px solid #333;*/
 }
 .compaign-01 img, .compaign-02 img  {
