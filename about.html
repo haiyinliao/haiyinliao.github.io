@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Korea SSG.COM event</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel=stylesheet type="text/css" href="css/reset.css">
+		<link rel=stylesheet type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div class="main-container">
+			<div class="spec-01">
+				<h1><span>關於 About</span><hr /></h1>
+				<div class="compaign-04 period">
+					<div class="col-container">
+						<div class="col-md-7 col-md-push-5">
+							<div class="animation-o bottom-to-top">
+								<div style="background-image: url('images/about-2.jpg');" class="scene-capture"></div>
+								<!-- <img src="images/1.jpg" /> -->
+							</div>
+						</div>
+						<div class="col-md-5 col-md-pull-7">
+							<div class="period-context">
+								<span class="date">12/1990</span>
+								<h2 class="milestone">阿飛正傳</h2>
+								<p class="classic-lines">十六號，四月十六號。<br />一九六零年四月十六號下午三點之前的一分鐘你和我在一起，因為你我會記住這一分鐘。從現在開始我們就是一分鐘的朋友，這是事實，你改變不了，因為已經過去了。</p>
+								<p>電影以六十年代的香港為背景，士多少女蘇麗珍（張曼玉）和舞女露露（劉嘉玲）遇上浪子阿飛，猶如飛蛾撲火，阿飛卻終究無法填補心中空虛，決定到南洋尋找生母。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="compaign-04 period">
+					<div class="col-container">
+						<div class="col-md-7">
+							<div class="animation-o bottom-to-top">
+								<div style="background-image: url('images/about-1.jpg');" class="scene-capture"></div>
+								<!-- <img src="images/1.jpg" /> -->
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="period-context">
+								<span class="date">12/1993</span>
+								<h2 class="milestone">霸王別姬</h2>
+								<p class="classic-lines">不行！說的是一輩子！<br />差一年，一個月，一天，一個時辰，<br />都不算一輩子！</p>
+								<p>改編自李碧華同名小說，由陳凱歌執導，張國榮、張豐毅、鞏俐主演的電影。敘述伶人程蝶衣對國粹藝術的執著，進而投影出歷史與文化在大時代的演變下，造成的激盪與人生。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="compaign-04 period">
+					<div class="col-container">
+						<div class="col-md-7 col-md-push-5">
+							<div class="animation-o bottom-to-top">
+								<div style="background-image: url('images/about-3.jpg');" class="scene-capture"></div>
+								<!-- <img src="images/3.jpg" /> -->
+							</div>
+						</div>
+						<div class="col-md-5 col-md-pull-7">
+							<div class="period-context">
+								<span class="date">07/1997</span>
+								<h2 class="milestone">春光乍洩</h2>
+								<p class="classic-lines">我一直沒告訴何寶榮，他受傷的日子是我最開心的日子。</p>
+								<p>王家衛導演的一部香港電影，故事主要發生於阿根廷，描述張國榮與梁朝偉所飾演的一對男同志伴侶的愛情故事。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(function() {
+				var ani_o = $.find('.animation-o');
+				console.log('ani_o = ' + ani_o.length);
+
+				$(window).on('scroll resize', function() {
+					detectAniO();
+				});
+
+
+				function detectAniO() {
+					// get current window position
+					var window_height = $(window).height();
+					var window_top_pos = $(window).scrollTop();
+					var window_bottom_pos = window_top_pos + window_height;
+
+					// check the position of the elements with animation effect class
+					$.each(ani_o, function() {
+
+						var $ele = $(this)
+						var ele_height = $ele.outerHeight();
+						var ele_top_pos = $ele.offset().top;
+						var ele_bottom_pos = ele_top_pos + ele_height;
+
+						if ((ele_top_pos <= window_bottom_pos) && (ele_bottom_pos >= window_top_pos)) {
+							$ele.addClass('slide-in');
+
+						} else {
+							$ele.removeClass('slide-in');
+
+						}
+					});
+				}
+			});
+		</script>
+	</body>
+</html>
