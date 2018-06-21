@@ -791,3 +791,117 @@ ul.item-slider {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+/* product page */
+.product-pre-thumbnails {
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: -8px;
+	padding-left: 3%;
+	padding-right: 3%;
+}
+.product-thumbnail {
+	padding: 12px;
+}
+.product-thumbnail a {
+	cursor: pointer;
+}
+.product-thumbnail a.thumbnail-active img {
+	border: 2px solid #333;
+}
+.product-thumbnail img {
+	width: 100%;
+}
+.product-carousel {
+	position: relative;
+	width: 80%;
+	padding-left: 3%;
+	padding-right: 3%;
+	display: inline-block;
+	vertical-align: top;
+}
+.product-carousel-container {
+	white-space: nowrap;
+	overflow: hidden;
+}
+.product-carousel-item {
+	width: 100%;
+	display: inline-block;
+	background-size: cover;
+}
+.img-ratio-4-5 {
+	height: 0;
+	padding-bottom: 125%;
+}
+.product-slick-dots {
+	position: absolute;
+	left: 50%;
+	bottom: 10%;
+	margin-left: -38.345px;
+}
+.product-slick-dots li {
+	position: relative;
+	width: 5.5px;
+	height: 5.5px;
+	background: #00000042;
+	border-radius: 100px;
+	display:inline-block;
+	vertical-align: middle;
+	margin: 0 4px;
+	cursor: pointer;
+}
+.product-slick-dots li::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -5px;
+	margin-left: -5px;
+	width: 10px;
+	height: 10px;
+	background: #FFFFFFA6;
+	border-radius: 150px;
+	border: 1px solid #33333366;
+	/*z-index: -1;*/
+}
+.product-slick-dots li.product-dot-active {
+	position: relative;
+	width: 10px;
+	height: 10px;
+	background: #000000A6;
+	/* z-index is not working */
+	/* z-index: 1000; */
+}
+.product-slick-dots li.product-dot-active::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -7;
+	margin-left: -7px;
+	width: 14px;
+	height: 14px;
+	background: #FFFFFFA6;
+	border-radius: 150px;
+	border: 1px solid #33333366;
+	z-index: -1;
+}
+.product-carousel-control {
+	color: #000000A6;
+  	font-size: 70px;
+  	position: absolute;
+  	top: 50%;
+  	margin-top: -35px;
+  	z-index: 10;
+  	cursor: pointer;
+}
+.carousel-prev {
+  left: 8%;
+}
+.carousel-next {
+  right: 8%;
+}
+.carousel-animation {
+	transition: all 300ms ease-in-out;
+}
