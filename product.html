@@ -1,0 +1,189 @@
+<html>
+	<head>
+		<title>Product Info Page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel=stylesheet type="text/css" href="css/reset.css">
+		<link rel=stylesheet type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<div class="main-container">
+			<div class="col-container">
+				<div class="col-sm-7">
+					<ul class="product-pre-thumbnails">
+						<li class="product-thumbnail">
+							<div class="img-ratio-4-5">
+								<a class="thumbnail-active" data-thumbnail-index="0"><img src="img/product1.jpeg"></a>
+							</div>
+						</li>
+						<li class="product-thumbnail">
+							<div class="img-ratio-4-5">
+								<a data-thumbnail-index="1"><img src="img/product2.jpeg"></a>
+							</div>
+						</li>
+						<li class="product-thumbnail">
+							<div class="img-ratio-4-5">
+								<a data-thumbnail-index="2"><img src="img/product3.jpeg"></a>
+							</div>
+						</li>
+						<li class="product-thumbnail">
+							<div class="img-ratio-4-5">
+								<a data-thumbnail-index="3"><img src="img/product4.jpeg"></a>
+							</div>
+						</li>
+					</ul><!-- 
+
+					 --><div class="product-carousel">
+					 	<a class="product-carousel-control carousel-prev" data-direction="prev">&#x276C;</a>
+						<a class="product-carousel-control carousel-next" data-direction="next">&#10093;</a>
+						<!-- <img src="img/product2.jpeg" /> -->
+						<div class="product-carousel-container">
+							<div style="background-image: url('img/product4.jpeg')" class="img-ratio-4-5 product-carousel-item"></div><!-- 
+						 --><div style="background-image: url('img/product1.jpeg')" class="img-ratio-4-5 product-carousel-item"></div><!-- 
+						 --><div style="background-image: url('img/product2.jpeg')" class="img-ratio-4-5 product-carousel-item"></div><!-- 
+						 --><div style="background-image: url('img/product3.jpeg')" class="img-ratio-4-5 product-carousel-item"></div><!-- 
+						 --><div style="background-image: url('img/product4.jpeg')" class="img-ratio-4-5 product-carousel-item"></div>
+						</div>
+						<ul class="product-slick-dots">
+							<li class="product-dot-active" aria-hidden="true" data-dot-index="0"></li>
+							<li aria-hidden="true" data-dot-index="1"></li>
+							<li aria-hidden="true" data-dot-index="2"></li>
+							<li aria-hidden="true" data-dot-index="3"></li>
+						</ul>
+					</div>	
+				</div>
+				<div class="col-sm-5">
+					
+				</div>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script>
+			$(function() {
+				var current_i = 1;
+				var first_i = 0;
+				var last_i = $('.product-carousel-container').children().length - 1;
+				var carouselInterval; //移動的幅度
+				var $carouselItem = $('.product-carousel-item');
+
+				setInitCarouselPos();
+
+				$(window).resize(function() {
+					setCarouselPosition();
+				});
+
+				$('.product-carousel-control').click(function() {
+					var dir = $(this).data('direction');
+
+					if (dir === 'prev') {
+						if (current_i === 0) {
+							$carouselItem.removeClass('carousel-animation');
+							$carouselItem.css('transform', 'translateX(-' + carouselInterval * last_i + 'px)');
+							current_i = last_i - 1;
+						} else {
+							current_i --;
+						}
+
+					} else { /* next */
+						if (current_i === last_i) {
+							$carouselItem.removeClass('carousel-animation');
+							$carouselItem.css('transform', 'translateX(0)');
+							current_i = 1;
+						} else {
+							current_i ++;
+						}
+					}
+
+					setCarouselPosition();
+				});
+
+				$('.product-slick-dots li').click(function() {
+					$('ul.product-slick-dots li').removeClass('product-dot-active');
+					var dot_i = $(this).data('dotIndex');
+
+					current_i = dot_i + 1;
+					setCarouselPosition();
+				});
+
+				$('.product-thumbnail a').click(function() {
+					$('.product-thumbnail a').removeClass('thumbnail-active');
+					var thumbnail_i = $(this).data('thumbnailIndex');
+					$(this).addClass('thumbnail-active');
+
+					current_i = thumbnail_i + 1;
+					setCarouselPosition();
+				});
+
+				$('.product-carousel').on('swipeleft', swipeleftHandler);
+				$('.product-carousel').on('swiperight', swiperightHandler);
+
+				function swipeleftHandler() {
+					if (current_i === last_i) {
+						$carouselItem.removeClass('carousel-animation');
+						$carouselItem.css('transform', 'translateX(0)');
+						current_i = 1;
+					} else {
+						current_i ++;
+					}
+					setCarouselPosition();
+				}
+
+				function swiperightHandler() {
+					if (current_i === 0) {
+						$carouselItem.removeClass('carousel-animation');
+						$carouselItem.css('transform', 'translateX(-' + carouselInterval * last_i + 'px)');
+						current_i = last_i - 1;
+					} else {
+						current_i --;
+					}
+					setCarouselPosition();
+				}
+
+
+				function setInitCarouselPos() {
+					getCarouselInterval();
+					$carouselItem.css('transform', 'translateX(-' + carouselInterval + 'px)');
+				}
+
+				function getCarouselInterval() {
+					carouselInterval = $('.product-carousel-item').width();
+				}
+
+				function setCarouselPosition() {
+					getCarouselInterval();
+					var distance = carouselInterval * current_i;
+					$carouselItem.addClass('carousel-animation');
+					$('.product-carousel-item').css('transform','translateX(-' + distance + 'px)');
+					relocateDots();
+					relocateThumbnails();
+				}
+
+				function relocateDots() {
+					$('ul.product-slick-dots li').removeClass('product-dot-active');
+					var dot_i;
+
+					if (current_i === 0) {
+						dot_i = last_i - 1;
+					} else {
+						dot_i = current_i - 1;
+					}
+					
+					$('ul.product-slick-dots').find("li[data-dot-index='" + dot_i + "']").addClass('product-dot-active');
+				}
+
+				function relocateThumbnails() {
+					$('.product-thumbnail a').removeClass('thumbnail-active');
+					var thumbnail_i;
+
+					if (current_i === 0) {
+						thumbnail_i = last_i - 1;
+					} else {
+						thumbnail_i = current_i - 1;
+					}
+
+					$('.product-thumbnail').find("a[data-thumbnail-index='" + thumbnail_i + "']").addClass('thumbnail-active');
+				}
+			});
+		</script>
+	</body>
+</html>
