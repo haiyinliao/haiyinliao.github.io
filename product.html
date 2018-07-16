@@ -2,6 +2,7 @@
 	<head>
 		<title>Product Info Page</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
 		<link rel=stylesheet type="text/css" href="css/reset.css">
 		<link rel=stylesheet type="text/css" href="css/style.css">
 	</head>
@@ -12,7 +13,7 @@
 					<ul class="product-pre-thumbnails">
 						<li class="product-thumbnail">
 							<div class="img-ratio-4-5">
-								<a class="thumbnail-active" data-thumbnail-index="0"><img src="img/product1.jpeg"></a>
+								<a class="thumbnail-active" data-thumbnail-index="0"><img src="img/multi.jpg"></a>
 							</div>
 						</li>
 						<li class="product-thumbnail">
@@ -32,16 +33,17 @@
 						</li>
 					</ul><!-- 
 
-					 --><div class="product-carousel">
+				--><div class="product-carousel">
+					 	<div class="img-magnifier-glass"></div>
 					 	<a class="product-carousel-control carousel-prev" data-direction="prev">&#x276C;</a>
 						<a class="product-carousel-control carousel-next" data-direction="next">&#10093;</a>
 						<!-- <img src="img/product2.jpeg" /> -->
-						<div class="product-carousel-container">
-							<div style="background-image: url('img/product4.jpeg')" class="img-ratio-4-5 product-carousel-item"></div><!-- 
-						 --><div style="background-image: url('img/product1.jpeg')" class="img-ratio-4-5 product-carousel-item"></div><!-- 
-						 --><div style="background-image: url('img/product2.jpeg')" class="img-ratio-4-5 product-carousel-item"></div><!-- 
-						 --><div style="background-image: url('img/product3.jpeg')" class="img-ratio-4-5 product-carousel-item"></div><!-- 
-						 --><div style="background-image: url('img/product4.jpeg')" class="img-ratio-4-5 product-carousel-item"></div>
+						<div class="product-carousel-container img-magnifier-container">
+							<div style="background-image: url('img/product4.jpeg')" class="img-ratio-4-5 product-carousel-item magnify-img"></div><!-- 
+						 --><div style="background-image: url('img/multi.jpg')" class="img-ratio-4-5 product-carousel-item magnify-img"></div><!-- 
+						 --><div style="background-image: url('img/product2.jpeg')" class="img-ratio-4-5 product-carousel-item magnify-img"></div><!-- 
+						 --><div style="background-image: url('img/product3.jpeg')" class="img-ratio-4-5 product-carousel-item magnify-img"></div><!-- 
+						 --><div style="background-image: url('img/product4.jpeg')" class="img-ratio-4-5 product-carousel-item magnify-img"></div>
 						</div>
 						<ul class="product-slick-dots">
 							<li class="product-dot-active" aria-hidden="true" data-dot-index="0"></li>
@@ -67,6 +69,11 @@
 				var $carouselItem = $('.product-carousel-item');
 
 				setInitCarouselPos();
+
+				var actual_width = 0;
+				var actual_height = 0;
+				
+				initMagnifier();
 
 				$(window).resize(function() {
 					setCarouselPosition();
@@ -146,7 +153,7 @@
 				}
 
 				function getCarouselInterval() {
-					carouselInterval = $('.product-carousel-item').width();
+					carouselInterval = $('.product-carousel-item')[0].getBoundingClientRect().width;
 				}
 
 				function setCarouselPosition() {
@@ -156,6 +163,7 @@
 					$('.product-carousel-item').css('transform','translateX(-' + distance + 'px)');
 					relocateDots();
 					relocateThumbnails();
+					initMagnifier();
 				}
 
 				function relocateDots() {
@@ -183,6 +191,53 @@
 
 					$('.product-thumbnail').find("a[data-thumbnail-index='" + thumbnail_i + "']").addClass('thumbnail-active');
 				}
+
+				/* Image Magnifier */
+				$('.product-carousel').mousemove(function(event) {
+						$this = $('.img-magnifier-container');
+						var img_offset = $this.offset();
+						var cursor_x = event.pageX -img_offset.left;
+						var cursor_y = event.pageY - img_offset.top;
+
+						if (cursor_x >= 0 && cursor_x <= $this.width() && cursor_y >= 0 && cursor_y <= $this.height()){
+							$('.img-magnifier-glass').fadeIn(100);
+						} else {
+							$('.img-magnifier-glass').fadeOut(100);
+						}
+
+						var r = $('.img-magnifier-glass').width() / 2;
+						
+						var o_x = (cursor_x / $this.width() * actual_width - r) * (-1);
+						var o_y = (cursor_y / $this.height() * actual_height - r) * (-1);
+						var bg_position = o_x + 'px ' + o_y + 'px';
+						console.log('bg_position = ' + bg_position);
+
+						var m_x = cursor_x - r;
+						var m_y = cursor_y - r; 
+
+						$('.img-magnifier-glass').css('backgroundPosition', bg_position);
+						$('.img-magnifier-glass').css({left: m_x, top: m_y});
+				});
+
+				function initMagnifier() {
+					var currentImgUrl = $('.product-carousel-container div:nth-child(' + (current_i + 1) + ')').css('background-image');
+					console.log('currentImgUrl = ' + currentImgUrl);
+					
+					var temp_arr = currentImgUrl.split('"');
+					console.log('temp_arr[1] = ' + temp_arr[1] );
+					currentImgUrl = temp_arr[1]
+					
+					var img_obj = new Image();
+					img_obj.src = currentImgUrl;
+					console.log('img_obj.src = ' + img_obj.src);
+
+					actual_width = img_obj.width;
+					actual_height = img_obj.height;
+
+					$('.img-magnifier-glass').css('background', "url('" + currentImgUrl + "') no-repeat");
+				}
+				
+
 			});
 		</script>
 	</body>
