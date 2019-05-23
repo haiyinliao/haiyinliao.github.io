@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 	<head>
 		<title>Pop-Up View</title>
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:700,900" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/solid.css" integrity="sha384-ioUrHig76ITq4aEJ67dHzTvqjsAP/7IzgwE7lgJcg2r7BRNGYSK0LwSmROzYtgzs" crossorigin="anonymous">
@@ -31,8 +32,7 @@
 			$(function() {
 				$('.h-modal-btn').click(function() {
 					$('.h-modal-bg').addClass('h-modal-bg-show');
-					alert(123);
-					// $('.h-modal').addClass('h-modal-show');
+					$('.h-modal').addClass('h-modal-show');
 				});
 				$('.h-modal-close').click(function() {
 					$('.h-modal-bg').removeClass('h-modal-bg-show');
