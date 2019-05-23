@@ -38,9 +38,11 @@
 					$('.h-modal-bg').removeClass('h-modal-bg-show');
 					$('.h-modal').removeClass('h-modal-show');
 				});
-				$('.h-modal-bg').click(function() {
-					$('.h-modal-bg').removeClass('h-modal-bg-show');
-					$('.h-modal').removeClass('h-modal-show');
+				$('.h-modal-bg').click(function(e) {
+					if (e.target == this) {
+						$('.h-modal-bg').removeClass('h-modal-bg-show');
+						$('.h-modal').removeClass('h-modal-show');
+					}
 				});
 
 				$('.h-popup-btn').click(function() {
