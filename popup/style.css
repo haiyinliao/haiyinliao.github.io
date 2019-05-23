@@ -117,6 +117,7 @@
 }
 .h-popup-btn[data-attr="play"] {
 	background-color: #00CC99;
+	outline: none;
 }
 .h-popup-bubble {
 	display: block;
