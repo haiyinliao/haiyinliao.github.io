@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>Pop-Up View</title>
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:700,900" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/solid.css" integrity="sha384-ioUrHig76ITq4aEJ67dHzTvqjsAP/7IzgwE7lgJcg2r7BRNGYSK0LwSmROzYtgzs" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/fontawesome.css" integrity="sha384-sri+NftO+0hcisDKgr287Y/1LVnInHJ1l+XC7+FOabmTTIK0HnE2ID+xxvJ21c5J" crossorigin="anonymous">
+		<link rel=stylesheet type="text/css" href="style.css">
+	</head>
+	<body>
+		<button class="h-modal-btn" data-attr="eat">食</button>
+		<button class="h-popup-btn" data-attr="play">樂<span class="h-popup-bubble"><i class="fas fa-gamepad"></i></span></button>
+		<div class="h-modal-bg">
+			<div class="h-modal">
+				<div class="h-modal-header">
+					<div class="h-modal-act-icon">
+						<img src="img/me.png" />
+					</div>
+					<a class="h-modal-close"><i class="fas fa-times"></i></a>
+					<h3 class="h-modal-title">請問今天想來點什麼?</h3>
+					<hr style="border-top: 1px solid #BDBDBD; margin: 12px 0;">
+				</div>
+				<div class="h-modal-content">
+					<p>韓式烤肉</p>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script>
+
+			$(function() {
+				$('.h-modal-btn').click(function() {
+					$('.h-modal-bg').addClass('h-modal-bg-show');
+					$('.h-modal').addClass('h-modal-show');
+				});
+				$('.h-modal-close').click(function() {
+					$('.h-modal-bg').removeClass('h-modal-bg-show');
+					$('.h-modal').removeClass('h-modal-show');
+				});
+				$('.h-modal-bg').click(function() {
+					$('.h-modal-bg').removeClass('h-modal-bg-show');
+					$('.h-modal').removeClass('h-modal-show');
+				});
+
+				$('.h-popup-btn').click(function() {
+					$('.h-popup-bubble').toggleClass('h-popup-bubble-pop');
+				});;
+			});
+		</script>
+	</body>
+</html>
