@@ -6,6 +6,10 @@
 	margin: 0;
 	padding: 0;
 }
+p {
+	margin: 18px 0;
+	font-weight: 500;
+}
 .h-modal-btn {
 	width: 60px;
 	height: 60px;
@@ -84,7 +88,7 @@
 }
 .h-modal-title {
 	font-size: 24px;
-	font-weight: 600;
+	font-weight: 700;
 	text-align: center;
 	margin: 18px 0;
 }
@@ -124,7 +128,7 @@
 	display: block;
 	position: absolute;
 	z-index: 0;
-	top: -12px;
+	top: -12px!important;
 	right: -25px;
 	width: 40px;
 	height: 40px;
@@ -178,4 +182,39 @@
 	100% {
 		transform: translateY(0);
 	}
+}
+
+input#message {
+	width: 90%;
+	font-size: 18px;
+	font-weight: 500;
+	padding: 6px 15px;
+	border: 1px solid #E0E0E0;
+	border-radius: 30px;
+}
+::placeholder {
+	color: #999;
+}
+.h-modal-content form p#signature {
+	text-align: right;
+}
+input#name {
+	font-size: 15px;
+	width: 145px;
+	margin: 0 6px;
+	padding: 0 6px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid #E0E0E0;
+}
+.h-modal-content form button {
+	width: 90%;
+	font-size: 24px;
+	font-weight: 700;
+	padding: 8px;
+	background-color: #A06EE1;
+	color: #FFF;
+	border-radius: 4px;
+	margin-top: 30px;
 }
