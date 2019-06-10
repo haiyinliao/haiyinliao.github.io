@@ -53,6 +53,12 @@ p {
 	-webkit-transition: all 0.2s ease-in-out; 
     transition: all 0.2s ease-in-out;
 }
+@media (max-width: 414px) {
+	.h-modal {
+ 		max-height: 80%;
+		overflow-y: scroll;
+	}
+}
 @media (min-width: 360px) {
 	.h-modal {
 		padding: 0 40px 40px;
@@ -225,5 +231,6 @@ input#name {
 	background-color: #A06EE1;
 	color: #FFF;
 	border-radius: 4px;
+	border: none;
 	margin-top: 30px;
 }
