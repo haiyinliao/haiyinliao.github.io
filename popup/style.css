@@ -55,7 +55,7 @@ p {
 }
 @media (max-width: 414px) {
 	.h-modal {
- 		max-height: 80%;
+ 		max-height: 90%;
 		overflow-y: scroll;
 	}
 }
