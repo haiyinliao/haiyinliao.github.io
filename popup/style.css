@@ -55,7 +55,7 @@ p {
 }
 @media (max-width: 414px) {
 	.h-modal {
- 		max-height: 90%;
+ 		max-height: 80%;
 		overflow-y: scroll;
 	}
 }
@@ -233,4 +233,12 @@ input#name {
 	border-radius: 4px;
 	border: none;
 	margin-top: 30px;
+}
+
+/* feedback css for form submit validation */
+#vali-msg label {
+	color: #a06ee1;
+}
+#vali-msg li {
+	list-style-type: none;
 }

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+	<head>
+		<title>Pop-Up View</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:500,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/solid.css" integrity="sha384-ioUrHig76ITq4aEJ67dHzTvqjsAP/7IzgwE7lgJcg2r7BRNGYSK0LwSmROzYtgzs" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/fontawesome.css" integrity="sha384-sri+NftO+0hcisDKgr287Y/1LVnInHJ1l+XC7+FOabmTTIK0HnE2ID+xxvJ21c5J" crossorigin="anonymous">
+		<link rel=stylesheet type="text/css" href="style.css">
+	</head>
+	<body>
+		<button class="h-modal-btn" data-attr="eat">食</button>
+		<button class="h-popup-btn" data-attr="play">樂<span class="h-popup-bubble"><i class="fas fa-gamepad"></i></span></button>
+		<div class="h-modal-bg">
+			<div class="h-modal">
+				<div class="h-modal-header">
+					<div class="h-modal-act-icon">
+						<img src="img/me.png" />
+					</div>
+					<a class="h-modal-close"><i class="fas fa-times"></i></a>
+					<h3 class="h-modal-title">請問今天想來點什麼?</h3>
+					<hr style="border-top: 1px solid #BDBDBD; margin: 12px 0;">
+				</div>
+				<div class="h-modal-content">
+					<form id="wishing-fountain" method="POST">
+						<input id="message" type="text" name="message" placeholder="我想喝珍煮丹"/>
+						<p id="signature">來自 OOO－<input id="name" type="text" name="name"/>的許願</p>
+						<div id="vali-msg"></div>
+						<button type="submit">SEND</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+		<script>
+
+			$(function() {
+
+				$('#wishing-fountain').validate({
+					rules: {
+						name: {
+							required: true
+						},
+						message: {
+							required: true
+						}
+					}, messages: {
+						name: {
+							required: '請留下名字'
+						},
+						message: {
+							required: '請留下許願內容'
+						}
+
+					}, errorLabelContainer: "#vali-msg",
+					   wrapper: 'li',
+					 submitHandler: function(form) {
+					 	var formData = $('form').serialize();
+					 	console.log(typeof(formData));
+
+					 	$.ajax({
+					 		type: 'POST',
+					 		url: 'https://script.google.com/macros/s/AKfycbzhypLMQjBvUMQcFPlbSBHd_AEmrwejSGCuP6RWW04MV00UhAw/exec',
+					 		data: formData,
+					 		dataType: 'json', // Parse the response as JSON
+					 		success: function(result) {
+					 			console.log(result);
+					 		},
+					 		contentType: 'application/json'
+					 	});
+					}
+				});
+
+				// popup dialog
+				$('.h-modal-btn').click(function() {
+					$('.h-modal-bg').addClass('h-modal-bg-show');
+					$('.h-modal').addClass('h-modal-show');
+				});
+				$('.h-modal-close').click(function() {
+					$('.h-modal-bg').removeClass('h-modal-bg-show');
+					$('.h-modal').removeClass('h-modal-show');
+				});
+				$('.h-modal-bg').click(function(e) {
+					if (e.target == this) {
+						$('.h-modal-bg').removeClass('h-modal-bg-show');
+						$('.h-modal').removeClass('h-modal-show');
+					}
+				});
+
+				$('.h-popup-btn').click(function() {
+					$('.h-popup-bubble').toggleClass('h-popup-bubble-pop');
+				});;
+			});
+		</script>
+	</body>
+</html>
