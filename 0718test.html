@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+	<head></head>
+	<body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+		$(function() {
+			var os;
+			launchApp();
+
+			function launchApp() {
+				$.ajax({
+					type: 'POST',
+					url: 'https://www.skm.com.tw/',
+					success: function(e) {
+						alert('success');
+						window.location.replace('skmapp://www.skm.com/exhibitionpage?store=af0c4c43-c79d-4346-a40f-d07e9f1c697d&sname=台北南西店&exid=1512');
+					},
+					error: function(e) {
+						alert('fail 10:57');
+						detectOS();
+						if(os === 'ios') {
+							window.location.replace('https://itunes.apple.com/tw/app/xin-guang-san-yue/id747411888?l=zh&mt=8');
+						} else if(os === 'android') {
+							window.location.replace('https://play.google.com/store/apps/details?id=com.skm.siapp&hl=zh_TW')
+						}
+					}
+				});
+			}
+
+			function detectOS() {
+				var userAgent = window.navigator.userAgent.toLowerCase();
+				if (/iphone|ipod|ipad/.test(userAgent)) {
+					os = 'ios';
+				} else if (/android/.test(userAgent)) {
+					os = 'android';
+				}
+			}
+		});
+		</script>
+	</body>
+</html>
