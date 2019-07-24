@@ -63,11 +63,12 @@
 					 		type: 'POST',
 					 		url: 'https://script.google.com/macros/s/AKfycbzhypLMQjBvUMQcFPlbSBHd_AEmrwejSGCuP6RWW04MV00UhAw/exec',
 					 		data: formData,
+					 		// contentType: 'application/json', // CROC error
 					 		dataType: 'json', // Parse the response as JSON
 					 		success: function(result) {
 					 			console.log(result);
 					 		},
-					 		contentType: 'application/json'
+					 		crossDomain: true
 					 	});
 					}
 				});
