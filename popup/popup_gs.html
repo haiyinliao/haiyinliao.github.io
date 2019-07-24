@@ -57,7 +57,8 @@
 					   wrapper: 'li',
 					 submitHandler: function(form) {
 					 	var formData = $('form').serialize();
-					 	console.log(typeof(formData));
+					 	console.log('form data: ' + formData);
+					 	console.log('data type: ' + typeof(formData));
 
 					 	$.ajax({
 					 		type: 'POST',
@@ -66,7 +67,6 @@
 					 		contentType: 'application/x-www-form-urlencoded',
 					 		dataType: 'json', // Parse the response as JSON
 					 		success: function(jqXHR) {
-					 			console.log('form data: ' + formData);
 					 			console.log('jqXHR.status: ' + jqXHR.status);
 					 			console.log('jqXHR.responseText: ' + jqXHR.responseText);
 					 		},
