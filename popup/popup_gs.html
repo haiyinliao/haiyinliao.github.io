@@ -63,13 +63,13 @@
 					 		type: 'POST',
 					 		url: 'https://script.google.com/macros/s/AKfycbzhypLMQjBvUMQcFPlbSBHd_AEmrwejSGCuP6RWW04MV00UhAw/exec',
 					 		data: formData,
-					 		contentType: 'application/json', // CROC error
+					 		contentType: 'application/x-www-form-urlencoded',
 					 		dataType: 'json', // Parse the response as JSON
-					 		success: function(result) {
-					 			console.log(result);
+					 		success: function(jqXHR ) {
+					 			console.log('jqXHR .status: ' + jqXHR .status);
 					 		},
-					 		error: function(XMLHttpRequest) {
-					 			console.log('XMLHttpRequest.status: ' + XMLHttpRequest.status);
+					 		error: function(jqXHR ) {
+					 			console.log('jqXHR .status: ' + jqXHR .status);
 					 		}
 					 	});
 					}
