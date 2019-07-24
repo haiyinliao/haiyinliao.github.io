@@ -65,10 +65,11 @@
 					 		data: formData,
 					 		contentType: 'application/x-www-form-urlencoded',
 					 		dataType: 'json', // Parse the response as JSON
-					 		success: function(jqXHR ) {
+					 		success: function(jqXHR) {
 					 			console.log('jqXHR.status: ' + jqXHR.status);
+					 			console.log('jqXHR.responseText: ' + jqXHR.responseText);
 					 		},
-					 		error: function(jqXHR ) {
+					 		error: function(jqXHR) {
 					 			console.log('jqXHR.status: ' + jqXHR.status);
 					 		}
 					 	});
