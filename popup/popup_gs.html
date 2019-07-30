@@ -61,14 +61,14 @@
 					 	console.log('data type: ' + typeof(formData));
 
 					 	$.ajax({
-					 		type: 'POST',
+					 		type: 'GET',
 					 		url: 'https://script.google.com/macros/s/AKfycbzhypLMQjBvUMQcFPlbSBHd_AEmrwejSGCuP6RWW04MV00UhAw/exec',
 					 		data: formData,
 					 		contentType: 'application/x-www-form-urlencoded',
 					 		// contentType: 'application/json',
 					 		dataType: 'json', // Parse the response as JSON
 					 		success: function(data, textStatus, jqXHR) {
-					 			alert('textStatus: ' + textStatus + ' jqXHR.status: ' + jqXHR.status);
+					 			console.log('textStatus: ' + textStatus + ' jqXHR.status: ' + jqXHR.status);
 					 		},
 					 		error: function(jqXHR) {
 					 			console.log('jqXHR.status: ' + jqXHR.status);
