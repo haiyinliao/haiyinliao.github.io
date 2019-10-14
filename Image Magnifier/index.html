@@ -7,7 +7,8 @@
 		<link rel=stylesheet type="text/css" href="css/style.css">
 
 		<style>
-			#img-magnifier-ex-frame {
+			.magnifying-popup { 
+				/* The pop-up view css style is omitted in this example.  */
 				width: 320px;
 				height: 408px;
 				margin: 0 auto;
@@ -24,87 +25,67 @@
 		</style>
 	</head>
 	<body>
-		<div id="img-magnifier-ex-frame" class="img-magnifier-container">
+		<div class="magnifying-popup img-magnifier-container">
 			<div class="img-magnifier-glass"></div>
-			<div class="product-carousel-item img-ratio-4-5 magnified-img" style="background-image: url('https://m.skm.com.tw/mSKMAdmin/WebFiles/Active/38395f4d-33c3-458b-97b0-57f9bd1b27df_20190905.jpg');">
+			<div class="product-carousel-item img-ratio-4-5 magnified-img" style="background-image: url('https://haiyinliao.github.io/Image%20Magnifier/img/multi.jpg');">
+				<img style="display: none;" />
 			</div>
 		</div>
-		<script src="http://thecodeplayer.com/uploads/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script>
 			$(function() {
 
 				var actual_width = 0, 
-					actual_height = 0;
-				
-				function initMagnifier() {
-					// Get the actual(magnified) dimension of the image.
-					alert('1');
-					$('.magnified-img').load(function() {
-						alert('2');
-						var img_obj = new Image();
-						img_obj.src = $(this).css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
-						alert(img_obj.src);
-						actual_width = img_obj.width;
-						actual_height = img_obj.height;
-					});
-				}
+					 actual_height = 0;
+			
+				// Get the actual(magnified) dimension of the image.
+				var src = $('.magnified-img').css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1');
+				$('.magnified-img img').attr('src', src).load(function() {
+					var img_obj = new Image();
+					img_obj.src = src;
 
-				initMagnifier();
+					actual_width = img_obj.width;
+					actual_height = img_obj.height;
+				});
 
 				$('.img-magnifier-container').mousemove(
 					function(event) {
-					// event object contains some information about the cursor coordinates.
-					// if (!actual_width && !actual_height) {
-
-					// 	var img_obj = new Image();
-					// 	var ciu
-					// 	img_obj.src = currentImgUrl;
-					// 	console.log('currentImgUrl = ' + currentImgUrl);
-					// 	console.log('img_obj.src = ' + img_obj.src);
-
-					// 	actual_width = img_obj.width;
-					// 	actual_height = img_obj.height;
-					// 	console.log('img_obj.width = ' + img_obj.width);
-					// 	console.log('img_obj.height = ' + img_obj.height);
-						
-					// } else {
-							// Get the position of the image relative to the document
-							var img_offset = $(this).offset();
-
-							// event object contains some information about the cursor coordinates.
-							var cursor_x = event.pageX - img_offset.left;
-							var cursor_y = event.pageY - img_offset.top;
-
-							console.log('img_offset.left = ' + img_offset.left);
-							console.log('img_offset.top = ' + img_offset.top);
-							console.log('cursor_x = ' + cursor_x);
-							console.log('cursor_y = ' + cursor_y);
-							// Deduct the position of the .magnify-img from the cursor position with respect to get the coordinates respect to the container (.magnify-img) 
+						// event object contains some information about the cursor coordinates.
 							
-							// Check if the cursor is in the container (.magnify-img)
-							var container_w = $('.img-magnifier-container').width();
-							var container_h = $('.img-magnifier-container').height();
-						
-							if (cursor_x >= 0 && cursor_x <= container_w && cursor_y >= 0 && cursor_y <= container_h) 
+						// Get the position of the image relative to the document
+						var a = $(this).offset().left,
+								b = $(this).offset().top,
+								w = $(this).width(),
+								h = $(this).height();
+
+							// Deduct the position of the .img-magnifier-container from the cursor position with respect to the document to get the coordinates with respect to the container. (.img-magnifier-container) 
+							var x = event.pageX - a;
+							var y = event.pageY - b;
+								
+							// Check if the cursor is in the container (.img-magnifier-container)
+							if (x >= 0 && x <= w && y >= 0 && y <= h) 
 							{
 								$('.img-magnifier-glass').fadeIn(100);
 							} else {
 								$('.img-magnifier-glass').fadeOut(100);
 							}
 
-
-							// if ($('.img-magnifier-glass').is(':visible')) {
-							// 	var mag_glass_r = $('.img-magnifier-glass')[0].getBoundingClientRect().width / 2;
-							// 	var cx = cursor_x / container_w * actual_width - mag_glass_r * (-1);
-							// 	var cy = cursor_y / container_h * actual_height - mag_glass_r * (-1);
-
-							// 	var bg_position = cx + 'px ' + cy + 'px'; 
-
-							// 	$('.img-magnifier-glass').css('backgroundPosition', bg_position);
-							// }
-					// }
-				 		
-			 });
+							if ($('.img-magnifier-glass').is(':visible')) {
+									var rx = (x / w * actual_width - $('.img-magnifier-glass').width() / 2) * (-1);
+									var ry = (y / h * actual_height - $('.img-magnifier-glass').height() / 2) * (-1);
+									// var bg_position = rx + 'px ' + ry + 'px'; 
+									
+									var gx = x - $('.img-magnifier-glass').width() / 2;
+									var gy = y - $('.img-magnifier-glass').height() / 2;
+								
+									$('.img-magnifier-glass').css('backgroundImage', 'url(' + src + ')');
+									// $('.img-magnifier-glass').css({backgroundImage: 'url(' + src + ')'});
+									$('.img-magnifier-glass').css('backgroundPosition', rx + 'px ' + ry +'px');
+									$('.img-magnifier-glass').css({left: gx, top: gy});
+							}
+						// }
+					 		
+			 	});
 			});
 		</script>
 	</body>
