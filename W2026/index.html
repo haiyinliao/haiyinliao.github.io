@@ -7,7 +7,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
 	<style>
 		* {
 			margin: 0;
@@ -15,7 +16,7 @@
 		body {
 			max-width: 1080px;
 			margin: 0 auto;
-			font-family: 'Noto Serif TC', serif;
+			font-family: 'Noto Sans TC', serif;
 			color: #3A2D3F;
 			background-color: #333;
 		}
@@ -33,8 +34,8 @@
 			border-radius: 2px;
 		}
 		p {
-			font-family: 'Arial', 'Noto Serif TC', '微軟正黑體';
-			font-weight: 300;
+			font-family: 'Arial', 'Noto Sans TC', '微軟正黑體';
+			font-weight: 400;
 			font-size: 16px;
 			line-height: 180%;
 			margin-top: 16px;
@@ -55,15 +56,15 @@
 			margin-bottom: 60px;
 		}
 		.page h2 {
-			font-family: 'Noto Serif TC', serif;
+			font-family: 'Cactus Classical Serif', serif;
 			font-size: 32px;
 			font-weight: 400;
 			margin-top: 18px;
 			margin-bottom: 18px;
 		}
 		.track-list > h2, .track-info > h2 {
-			border-top: 1px solid #333;
-			border-bottom: 1px solid #333;
+			border-top: 1px solid #3A2D3F;
+			border-bottom: 1px solid #3A2D3F;
 			padding-top: 4px;
 			padding-bottom: 8px;
 			text-align: center;
@@ -71,16 +72,18 @@
 		}
 		.track-list h3 {
 			font-family: 'Playfair Display', serif;
-			font-size: 24px;
+			font-size: 21px;
 			font-weight: 400;
-			font-style: oblique;
 			text-align: center;
 			margin: 18px 0 6px;
 			line-height: 180%;
 			background-image: linear-gradient(to right, #ECE9E680 0%, #FFFFFF  51%, #ECE9E680  100%);
-         	padding: 15px 0;
+         	padding: 9px 0;
          	border-radius: 3px;
          	box-shadow: 0 0 8px #AAAAAA1A;
+		}
+		.track-list h3.custom {
+			font-family: serif;
 		}
 		.track-list h3 span {
 			font-family: serif;
@@ -93,12 +96,12 @@
 			font-family: 'Noto Serif TC', serif;
 			font-size: 18px;
 			font-weight: 400;
-			color: #666;
+			color: #3A2D3F;
 			text-align: center;
 			position: relative;
 			margin: 30px 0;
 		}
-		.track-list h4::after {
+		.track-list h4::before {
 			content: '';
 			width: 100%;
 			height: 1px;
@@ -106,29 +109,36 @@
 			left: 0;
 			top: 50%;
 			transform: translateY(-50%);
-			background-color: #666;
-			z-index: -1;
+			background-color: #3A2D3F;
 		}
 		.track-list h4 span {
 			font-size: inherit;
 			font-weight: inherit;
-			background-color: #FFF;
+			background-color: #968CBB;
 			padding: 0 16px;
+			position: relative;
 		}
 		.track-info div:last-child {
-			border-bottom: 3px solid #333;
+			border-bottom: 3px solid #3A2D3F;
 		}
 		.track {
 			padding-bottom: 30px;
-			border-bottom: 2px solid #333;
+			border-bottom: 2px solid #3A2D3F;
 			margin-bottom: 30px;
 			position: relative;
 		}
 		.track h2 {
 			font-size: 27px;
-			font-weight: 300;
+			font-weight: 600;
 			text-align: center;
 			margin: 18px 0 6px;
+		}
+		.track h2.custom {
+			font-family: serif;
+			font-weight: 400;
+		}
+		.track h2 span {
+			display: inline-block;
 		}
 		.track h3 {
 			font-size: 18px;
@@ -147,8 +157,8 @@
 		.track p.composer::before {
 			content: '';
 			width: 100%;
-			height: 1px;
-			background-color: #666;
+			height: .5px;
+			background-color: #3A2D3F;
 			position: absolute;
 			left: 0;
 			top: 50%;
@@ -173,7 +183,7 @@
 			display: inline-block;
 		}
 		.performer-list .h-row-m {
-			border-bottom: 1px solid #3A2D3F;
+			border-bottom: .5px solid #3A2D3F;
 		}
 		.performer-list .h-row-m:last-child {
 			border-bottom: none;
@@ -255,6 +265,13 @@
 		<div class="h-container">
 			<div class="page">
 				<img style="margin-top: 40px;" src="img/hj.jpg">
+				<h2>華江高中校友管樂團</h2>
+				<p>華江高中校友管樂團成立於民國九十年，由一群畢業於華江管樂社的成員與康倫彰老師共同創立。</p>
+				<p>樂團承載著對音樂與母校的熱情，期望延續校友間的凝聚力，並持續精進演奏能力。</p>
+				<p>校友團以「盡」、「善」、「美」為理念，將音樂最純粹的感動傳遞給社會大眾。</p>
+			</div>
+			<div class="page">
+				<img style="margin-top: 40px;" src="img/hj.jpg">
 				<h2>華江高中管樂團</h2>
 				<p>華江高中管樂團是華江高中內的音樂性社團之一，由學生自發組成，以管樂器為主要演奏樂器，包括木管樂器、銅管樂器、低音提琴、打擊樂器等。該團致力於培養學生音樂方面的興趣及專業技能，並經常在學校、社區和其他公共場合進行演出。華江高中管樂團的成員們平時除了上課外，還會進行訓練、練習及排練，以確保團隊演奏的水平和品質。該團樂器齊全，演奏曲目涵蓋廣泛，從古典到現代流行音樂都有涉獵。</p>
 				<ul>
@@ -274,20 +291,24 @@
 			</div>
 			<div class="page track-list">
 				<h2>曲目</h2>
-				<h3 data-track="track-01">The Seventh Night Of July / <br /><span>Music by 酒井格</span></h3>
-				<h3 data-track="track-02">Nuovo Cinema Paradiso / <br /><span>Music by Ennio Morricone<br />Arranged by Peter Kleine Schaars</span></h3>
-				<h3 data-track="track-03">October / <br /><span>Music by Eric Whitacre</span></h3>
-				<h3 data-track="track-04">Armenian Dances Part 1 / <br /><span>Music by Alfired Reed</span></h3>
+				<h3 class="custom" data-track="track-01">The Seventh Night Of July / <br /><span>Music by 酒井格</span></h3>
+				<h3 data-track="track-02">「篤姬」メインテーマ / <br /><span>Music by 吉俣良<br />Arranged by 後藤洋</span></h3>
+				<h3 data-track="track-03">斐伊川に流るるクシナダ姫の涙 / <br /><span>Music by 樽屋雅德</span></h3>
+				<h3 class="custom" data-track="track-04">First Suite in E-flat for Military Band / <br /><span>Music by Gustav Holst<br />Arranged by 伊藤康英</span></h3>
+				<h3 data-track="track-05">巡礼の島 / <br /><span>Music by 酒井格</span></h3>
 				<h4><span>中場休息</span></h4>
-				<h3 data-track="track-05">Aladdin / <br /><span>Music by Alan Menken<br />Arranged by Paul Jennings</span></h3>
-				<h3 data-track="track-06">交響組曲「風の谷のナウシカ」 / <span>Music by 久石讓<br />Arranged by 森田一浩</span></h3>
-				<h3 data-track="track-07">East Cost Pictures / <br /><span>Music by Nigel Hess</span></h3>
+				<h3 data-track="track-06">マードックからの最後の手紙 / <span>Music by 樽屋雅德</span></h3>
+				<h3 data-track="track-07">「鬼滅の刃」メドレー / <br /><span>Arranged by 三浦秀秋</span></h3>
+				<h3 data-track="track-08">夜に駆ける / <br /><span>Music by Ayase<br />Arranged by 宮川成治</span></h3>
+				<h3 data-track="track-09">怪物 / <br /><span>Music by Ayase<br />Arranged by 郷間幹男</span></h3>
+				<h3 data-track="track-10">群青 / <br /><span>Music by Ayase<br />Arranged by 郷間幹男</span></h3>
+				<h3 data-track="track-11">JABBERLOOP Medley / <br /><span>Music by 岸本亮<br />Arranged by 高橋宏樹</span></h3>
 			</div>
 			<div class="page track-info">
 				<h2>曲目介紹</h2>
 				<div class="track">
 					<div class="anchor" id="track-01"></div>
-					<h2>The Seventh Night Of July</h2>
+					<h2 class="custom">The Seventh Night Of July</h2>
 					<h3>七夕</h3>
 					<p class="composer"><span>Music by 酒井格</span></p>
 					<p>日本當代作曲家酒井格出生於大阪，自幼展現優異的音樂才華。《七夕》完成於 1988 年，是其高中時期脫穎而出的成名之作，其抒情性與畫面感使其成為近代管樂作品中最常被演奏的經典之一。</p>
@@ -305,42 +326,54 @@
 				</div>
 				<div class="track">
 					<div class="anchor" id="track-03"></div>
-					<h2>First Suite in E-flat for Military Band</h2>
+					<h2>斐伊川に流るるクシナダ姫の涙</h2>
+					<h3>斐伊川奇稻田姬公主之淚</h3>
+					<p class="composer"><span>Music by 樽屋雅德</span></p>
+					<p>本曲取材自日本最古史籍《古事記》中著名的「八岐大蛇」傳說。故事發生於出雲國（今島根縣東部）斐伊川旁，被放逐的素戔嗚尊（其姊為日本皇室始祖的天照大神）遇見一對老夫婦，得知其八名女兒已有七人遭大蛇吞噬，只剩末女奇稻田姬倖存。素戔嗚尊遂決意馳援討伐大蛇，最終救下奇稻田姬，締結一段守護與承諾的情感。</p>
+					<p>樽屋雅德以現代管樂語彙重構這段神話，音樂透過音色對比、動態推進與戲劇性層次展現哀傷、戰鬥與救贖。跨越千年的故事在聲響中獲得新生命，也使這段神話中的情感與相遇得以再次被聽見。</p>
+				</div>
+				<div class="track">
+					<div class="anchor" id="track-04"></div>
+					<h2 class="custom">First Suite in E-flat for <span>Military Band</span></h2>
 					<p class="composer"><span>Music by EGustav Holst<br />Arranged by 伊藤康英</span></p>
 					<p>古斯塔夫・霍爾斯特（Gustav Holst）因《行星組曲》而廣為人知，但在管樂領域中，《First Suite in E-flat for Military Band》（1909）則具有里程碑般的重要地位。十九世紀的作品多以歌劇、舞曲或管弦樂作品改編為主，編制與音響皆受限制，而本作品採用管樂為原生媒材創作，標誌管樂逐漸建立自身語法與音響特質的起點，被視為近代管樂曲庫發展的關鍵作品之一。</p>
 					<p>組曲共分三個樂章，霍爾斯特在總譜中註明需不間斷演奏。第一樂章〈夏康舞曲〉以主題加多段變奏構成，音色與節奏逐步累積張力；第二樂章〈間奏曲〉以速度與性格的對比形塑結構；第三樂章〈進行曲〉則以明亮的旋律與節奏輪廓凸顯管樂的管色特性，形成開放而鮮明的收束。</p>
 					<p>值得一提的是，本曲自誕生以來版本眾多，手稿版、出版社版與改訂版等累計多達六種以上。2010 年伊藤康英出版「原典版」，讓演奏者得以更貼近 1909 年手稿的音響與配器思維。</p>
 				</div>
 				<div class="track">
-					<div class="anchor" id="track-04"></div>
+					<div class="anchor" id="track-05"></div>
 					<h2>巡礼の島</h2>
+					<h3>巡禮之島</h3>
 					<p class="composer"><span>Music by 酒井格</span></p>
 					<p>本曲是酒井格於 2021 年應日本陸上自衛隊第 14 音樂隊之邀，為該團所在「四國」地區量身打造的作品。酒井格以四國最具象徵性的文化意象—「四國八十八箇所巡禮」為靈感，將朝聖者跨越四縣、尋找自我的旅程轉化為動人的樂章。酒井格將此作構思為「緩—急—緩—急」四個部分，分別對應巡禮路徑中四個地區的宗教象徵：阿波（發心）、土佐（修行）、伊予（菩提）、讚岐（涅槃）。</p>
 					<p>作品誕生背後亦有一段相當溫暖的緣分。因第 14 音樂隊成員透過酒井格的大學學弟（長號演奏者）傳達邀請，使本作得以誕生。酒井格特別為長號聲部安排充滿莊嚴與厚度的聖詠段落，成為全曲必聽亮點。同時各聲部亦獲得展現空間，使朝聖旅途中多層次的情緒與景致透過管樂的音色獲得具體呈現。</p>
 				</div>
 				<div class="track">
-					<div class="anchor" id="track-05"></div>
+					<div class="anchor" id="track-06"></div>
 					<h2>マードックからの最後の手紙</h2>
+					<h3>來自默多克的最後一封信</h3>
 					<p class="composer"><span>Music by 樽屋雅德</span></p>
 					<p>本曲以 1912 年鐵達尼號沉沒事故為背景，視角聚焦於一等航海士威廉‧麥克馬斯特‧默多克。不同於一般以災難本身為焦點的敘事，樽屋雅德將重心置於默多克對家人與責任的情感之上。</p>
 					<p>據傳默多克在航行期間有每日寫信給家人的習慣。雖然歷史上並無所謂「最後一封信」的史料留存，但樽屋雅德以此為創作契機，想像若默多克能在最後時刻寄出書信，其中會包含何種思念、祈願與不捨。作品並非重現災難，而是透過聲響剖析人性、責任與深情。尾段旋律收束於寂靜與餘韻之中，彷彿未曾寄出的信件在百年後以另一種形式回到我們面前。</p>
 				</div>
 				<div class="track">
-					<div class="anchor" id="track-06"></div>
+					<div class="anchor" id="track-07"></div>
 					<h2>「鬼滅の刃」メドレー</h2>
+					<h3>《鬼滅之刃》組曲</h3>
 					<p class="composer"><span>Arranged by 三浦秀秋</span></p>
 					<p>由吾峠呼世晴創作的《鬼滅之刃》因結合熱血戰鬥與深刻親情，在全球掀起文化現象。少年竈門炭治郎為拯救變成鬼的妹妹禰豆子而加入「鬼殺隊」，故事中家族、意志與夥伴之間的連結，使作品超越漫畫領域，成為跨世代的文化符號。</p>
 					<p>本組曲由三浦秀秋改編，選取四首代表性樂曲—《紅蓮華》、《from the edge》、《炭治郎之歌》、《炎》。改編保留原作幻想與熱度，使層次豐富的旋律在線條清晰的吹奏語法中重現。各聲部猶如並肩作戰的角色般交織，使作品跨越媒材，以管樂的形式延續其情感能量。</p>
 				</div>
 				<div class="track">
-					<div class="anchor" id="track-07"></div>
+					<div class="anchor" id="track-08"></div>
 					<h2>夜に駆ける</h2>
+					<h3>向夜晚奔去</h3>
 					<p class="composer"><span>Music by Ayase<br />宮川成治</span></p>
 					<p>作為雙人音樂團體 YOASOBI 的出道曲，《夜に駆ける》以「將小說音樂化」為核心概念，改編自星野舞夜投稿於 monogatary.com的短篇小說《桑納托斯的誘惑》。作品以數位音樂世代特有的節奏與語感建立敘事，旋律之下隱含關於牽繫、生死與選擇的層次，使其在日本乃至全球獲得高度共鳴。</p>
 					<p>宮川成治的管樂改編將原作的電子質地與疾馳感拆解為多層次的吹奏音色，將節奏線條與旋律段落轉化為具有物理能量的聲響。失去歌詞後，原先由語言承擔的敘事功能改由配器、動態與呼吸支撐，使作品在舞台上呈現出另一種聆聽體驗。</p>
 				</div>
 				<div class="track">
-					<div class="anchor" id="track-07"></div>
+					<div class="anchor" id="track-09"></div>
 					<h2>怪物</h2>
 					<p class="composer"><span>Music by Ayase<br />郷間幹男</span></p>
 					<p>《怪物》為動畫《BEASTARS》第二季片頭曲，作品探討生存本能、階層衝突以及慾望對立等命題。Ayase 在創作中使用電子質地與段落性對比結構描繪角色的內在陰影，使作品具有鮮明的張力與冷冽色彩。</p>
@@ -348,15 +381,16 @@
 					<p></p>
 				</div>
 				<div class="track">
-					<div class="anchor" id="track-07"></div>
+					<div class="anchor" id="track-10"></div>
 					<h2>群青</h2>
 					<p class="composer"><span>Music by Ayase<br />郷間幹男</span></p>
 					<p>若《夜に駆ける》開啟 YOASOBI 的序章，《群青》則是最能跨越世代引發共鳴的作品。歌曲以漫畫《藍色時期》為靈感，描繪追尋理想道路中伴隨的迷惘、挫折與勇氣。作品在日本已超越一般流行歌曲的領域，成為青春與奮鬥的文化符號。2022 年亦被選為春季甲子園入場行進曲（編曲者為《七夕 The Seventh Night Of July》與《巡礼の島》的作曲者酒井格），並在車站成為進站音效，象徵其滲透力與跨界能量。</p>
 					<p>在管樂版本中，原本依靠歌詞與聲線傳達的情緒由透明和聲與旋律線承接，使情感核心更為凝縮。作品如同一幅聲音畫卷，映照追夢者的青春與執著，也讓聽者在無歌詞的狀態下重新觸碰屬於自己的共鳴。</p>
 				</div>
 				<div class="track">
-					<div class="anchor" id="track-07"></div>
-					<h2>Jabberloop Medley</h2>
+					<div class="anchor" id="track-11"></div>
+					<h2 class="custom">JABBERLOOP Medley</h2>
+					<h3>JABBERLOOP 組曲</h3>
 					<p class="composer"><span>Music by 岸本亮<br />高橋宏樹</span></p>
 					<p>本組曲精選演奏俱樂部爵士樂的五人樂團 JABBERLOOP 的代表曲《白熊》與《閃電》。JABBERLOOP 自 2007 年出道以來，以高律動、高能量與器樂演奏為特色，於不同領域獲得關注。</p>
 					<p>高橋宏樹的改編將原本屬於夜色與舞池的爵士質地轉化為具爆發力的吹奏音響。《白熊》因作為棒球節目主題曲而廣為人知，亦成為甲子園應援文化的一部分；而《閃電》則是樂團現場必備的「點火曲」，以快速推進與能量釋放聞名。</p>
@@ -365,116 +399,199 @@
 			</div>
 			<div class="page performer-list">
 				<h2>演出名單</h2>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>短笛</p>
-					</div><div class="h-col-10">
-						<p>林芷穎</p>
+				<div class="group">
+					<h3>華江高中校友團</h3>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>短笛</p>
+						</div><div class="h-col-10">
+							<p>林芷穎</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>長笛</p>
+						</div><div class="h-col-10">
+							<p>林芷穎 / <span>蕭郁慈</span> / <span>鍾綺</span> / 詹恩喆 / <span>畢馨云</span> / 莊雅蓉</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>單簧管</p>
+						</div><div class="h-col-10">
+							<p>張語庭</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>豎笛</p>
+						</div><div class="h-col-10">
+							<p>倪藝芹 / 許菀庭 / 林宜樺 / <span>尤恬</span> / 白宗平 / 龔柏榮 / <span>劉柏言</span> / 劉宥蘭</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>低音豎笛</p>
+						</div><div class="h-col-10">
+							<p>吳小語</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>中音薩克斯風</p>
+						</div><div class="h-col-10">
+							<p>高嘉斈 / 林長升 / 陳彥慈</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>次中音薩克斯風</p>
+						</div><div class="h-col-10">
+							<p>張婕筠 / 張萓珊 / 羅子淵</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>上低音薩克斯風</p>
+						</div><div class="h-col-10">
+							<p>蔡承璋</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>小號</p>
+						</div><div class="h-col-10">
+							<p>尤金順 / 黃丹霓 / 廖海茵 / 葉千郁 / 黃律涵 / 楊凱芸 / 陳靖涵</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>法國號</p>
+						</div><div class="h-col-10">
+							<p>林威翰 / 張榮富 / 洪鋌峙 / 郭毓菱 / 劉晏辰</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>長號</p>
+						</div><div class="h-col-10">
+							<p>劉力宇 / 程以淩 / 陳崧右 / 李曜宇</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>上低音號</p>
+						</div><div class="h-col-10">
+							<p>楊舒棋 / 吳祖沂 / 羅澤揚 / 周芮伃</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>低音號</p>
+						</div><div class="h-col-10">
+							<p>梁銘鼎 / 王嘉露 / 鄭鎧霖</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>低音大提琴</p>
+						</div><div class="h-col-10">
+							<p>謝依伶</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>打擊</p>
+						</div><div class="h-col-10">
+							<p>吳怡潔 / 黃彥淑 / 莊于鋅 / 鄭婷勻 / 王敏瑄 / 羅雍南 / 張文耀</p>
+						</div>
+					</div>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>鋼琴</p>
+						</div><div class="h-col-10">
+							<p>鄭婷勻</p>
+						</div>
 					</div>
 				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>長笛</p>
-					</div><div class="h-col-10">
-						<p>林芷穎 / <span>蕭郁慈</span> / <span>鍾綺</span> / 詹恩喆 / <span>畢馨云</span> / 莊雅蓉</p>
+				<div class="group">
+					<h3>華江高中高中團</h3>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>短笛</p>
+						</div><div class="h-col-10">
+							<p>吳芯妤</p>
+						</div>
 					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>單簧管</p>
-					</div><div class="h-col-10">
-						<p>張語庭</p>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>長笛</p>
+						</div><div class="h-col-10">
+							<p>吳芯妤 / 劉亮妤 / 郭湘柔 / 謝宜蓁</p>
+						</div>
 					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>豎笛</p>
-					</div><div class="h-col-10">
-						<p>倪藝芹 / 許菀庭 / 林宜樺 / <span>尤恬</span> / 白宗平 / 龔柏榮 / <span>劉柏言</span> / 劉宥蘭</p>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>豎笛</p>
+						</div><div class="h-col-10">
+							<p>李欣穎</p>
+						</div>
 					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>低音豎笛</p>
-					</div><div class="h-col-10">
-						<p>吳小語</p>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>中音薩克斯風</p>
+						</div><div class="h-col-10">
+							<p>曾姿瑜 / 沈亮妤</p>
+						</div>
 					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>高音薩克斯風</p>
-					</div><div class="h-col-10">
-						<p>李采嫆</p>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>上低音薩克斯風</p>
+						</div><div class="h-col-10">
+							<p>李珈米</p>
+						</div>
 					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>中音薩克斯風</p>
-					</div><div class="h-col-10">
-						<p>高嘉斈 / 林長升 / 陳彥慈</p>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>小號</p>
+						</div><div class="h-col-10">
+							<p>王奇偉 /袁貫軒 / 張造中 / 周鈞品</p>
+						</div>
 					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>次中音薩克斯風</p>
-					</div><div class="h-col-10">
-						<p>張婕筠 / 張萓珊 / 羅子淵</p>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>法國號</p>
+						</div><div class="h-col-10">
+							<p>洪鋌峙 / 杜宛諭 / 陳奕璇</p>
+						</div>
 					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>上低音薩克斯風</p>
-					</div><div class="h-col-10">
-						<p>蔡承璋</p>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>長號</p>
+						</div><div class="h-col-10">
+							<p>黃嬿庭</p>
+						</div>
 					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>小號</p>
-					</div><div class="h-col-10">
-						<p>尤金順 / 黃丹霓 / 廖海茵 / 葉千郁 / 黃律涵 / 楊凱芸 / 陳靖涵</p>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>低音號</p>
+						</div><div class="h-col-10">
+							<p>林楷鈞</p>
+						</div>
 					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>法國號</p>
-					</div><div class="h-col-10">
-						<p>林威翰 / 張榮富 / 洪鋌峙 / 郭毓菱 / 劉晏辰</p>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>低音大提琴</p>
+						</div><div class="h-col-10">
+							<p>謝依伶 / 翟宥慈</p>
+						</div>
 					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>長號</p>
-					</div><div class="h-col-10">
-						<p>劉力宇 / 程以淩 / 陳崧右 / 李曜宇</p>
-					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>上低音號</p>
-					</div><div class="h-col-10">
-						<p>楊舒棋 / 吳祖沂 / 羅澤揚 / 周芮伃</p>
-					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>低音號</p>
-					</div><div class="h-col-10">
-						<p>梁銘鼎 / 王嘉露 / 鄭鎧霖</p>
-					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>低音大提琴</p>
-					</div><div class="h-col-10">
-						<p>謝依伶</p>
-					</div>
-				</div>
-				<div class="h-row-m">
-					<div class="h-col-2">
-						<p>打擊</p>
-					</div><div class="h-col-10">
-						<p>吳怡潔 / 黃彥淑 / 莊于鋅 / 鄭婷勻 / 王敏瑄 / 羅雍南 / 張文耀</p>
+					<div class="h-row-m">
+						<div class="h-col-2">
+							<p>打擊</p>
+						</div><div class="h-col-10">
+							<p>羅雍南 / 曾苡瑄 / 鄭莘霈 / 林子勛 / 安柏霏 / 吳冠勳 / 陳育芸</p>
+						</div>
 					</div>
 				</div>
 			</div>
