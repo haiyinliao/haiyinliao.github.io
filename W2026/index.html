@@ -38,13 +38,20 @@
 			font-weight: 500;
 			font-size: 16px;
 			line-height: 180%;
+			letter-spacing: .3px;
 			margin-top: 16px;
 			margin-bottom: 16px;
 			color: #3A2D3F;
 		}
 		ul {
+			font-family: 'Arial', 'Noto Sans TC', '微軟正黑體';
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 180%;
+			letter-spacing: .3px;
 			padding-left: 24px;
 			line-height: 180%;
+
 		}
 		.h-row [class^='h-col'] {
 			vertical-align: top;
@@ -77,10 +84,10 @@
 			text-align: center;
 			margin: 18px 0 6px;
 			line-height: 180%;
-			background-image: linear-gradient(to right, #ECE9E680 0%, #FFFFFF  51%, #ECE9E680  100%);
+			background-color: #FFFFFF3D;
          	padding: 9px 0;
          	border-radius: 3px;
-         	box-shadow: 0 0 8px #AAAAAA1A;
+         	box-shadow: 1px 1px 12px #3A2D3F30;
 		}
 		.track-list h3.custom {
 			font-family: serif;
@@ -240,16 +247,28 @@
 		}
 		.bridge {
 			height: 60px;
-			background: linear-gradient(0deg,rgba(58, 45, 63, 1) 0%, rgba(58, 45, 63, 0) 50%, rgba(58, 45, 63, 1) 100%);
+			background-color: #968CBB;
+			position: relative;
+		
+		}
+		.bridge::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(0deg,rgba(58, 45, 63, 1) 0%, rgba(58, 45, 63, 0) 0%, rgba(58, 45, 63, 1) 85%, rgba(58, 45, 63, 1) 100%);;
 		}
 		.footer {
-			background-color: #333;
-			color: #FFF;
-			padding: 12px 0;
+			background-color: #3A2D3F;
+			padding: 12px 18px;
+		}
+		.footer p {
+			color: #f0EEE8;
+			text-align: center;
 		}
 		.anchor {
 			position: absolute;
-			top: -30px;
+			top: -45px;
 		}
 		</style> 
 	</head>
@@ -266,7 +285,6 @@
 		<div class="h-container">
 			<div class="page">
 				<img style="margin-top: 40px;" src="img/group-01.jpg">
-				<img style="margin-top: 40px;" src="img/group-01-2.jpg">
 				<h2>華江高中校友管樂團</h2>
 				<p>華江高中校友管樂團成立於民國九十年，由一群畢業於華江管樂社的成員與康倫彰老師共同創立。</p>
 				<p>樂團承載著對音樂與母校的熱情，期望延續校友間的凝聚力，並持續精進演奏能力。</p>
@@ -620,11 +638,9 @@
 			</div>
 		</div>
 		<div class="footer">
-			<div class="h-container">
-				<p>感謝您以行動支持本團體，歡迎個人及團體捐款<br />
-				   合作金庫銀行（代碼 006）3605 717 001401
-				</p>
-			</div>
+			<p>感謝您以行動支持本團體，歡迎個人及團體捐款<br />
+			   合作金庫銀行（代碼 006）3605 717 001401
+			</p>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script>
