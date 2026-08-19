@@ -1,0 +1,366 @@
+<html>
+	<head>
+		<title>華江校友管樂團 2026 夏季音樂會</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+
+	<style>
+		* {
+			margin: 0;
+		}
+		body {
+			max-width: 1080px;
+			margin: 0 auto;
+			font-family: 'Noto Sans TC', serif;
+			color: #3A2D3F;
+			background-color: #333;
+		}
+		.h-container {
+			max-width: 1080px;
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: 60px;
+			padding-right: 60px;
+			padding-bottom: 1px;
+			background-color: #FFFFFF;
+		}
+		.h-container img {
+			width: 100%;
+			border-radius: 2px;
+		}
+		p {
+			font-family: 'Arial', 'Noto Sans TC', '微軟正黑體';
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 180%;
+			letter-spacing: .3px;
+			margin-top: 16px;
+			margin-bottom: 16px;
+			color: #3A2D3F;
+		}
+		ul {
+			font-family: 'Arial', 'Noto Sans TC', '微軟正黑體';
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 180%;
+			letter-spacing: .3px;
+			padding-left: 24px;
+			line-height: 180%;
+
+		}
+		.h-row [class^='h-col'] {
+			vertical-align: top;
+		}
+		.h-row-m [class^='h-col'] {
+			vertical-align: middle;
+		}
+		.page {
+			margin-bottom: 60px;
+		}
+		.page h2 {
+			font-family: 'Cactus Classical Serif', serif;
+			font-size: 32px;
+			font-weight: 400;
+			margin-top: 18px;
+			margin-bottom: 18px;
+		}
+		.page img {
+			box-shadow: 1px 1px 12px #3A2D3F3D;
+		}
+		.track-list > h2, .track-info > h2 {
+			font-family: 'Noto Serif TC';
+			color: #3A8DFF;
+			padding-top: 4px;
+			padding-bottom: 8px;
+			margin-bottom: 30px;
+		}
+		.track-list h3 {
+			font-family: 'Noto Serif TC';
+			font-size: 21px;
+			font-weight: 500;
+			text-align: center;
+			margin: 18px 0 6px;
+			line-height: 180%;
+			color: #FFF;
+			background-color: #3A8DFF;
+         	padding: 9px 0;
+         	border-radius: 90px;
+         	box-shadow: 1px 1px 12px #00000030;
+		}
+		.track-list h3.custom {
+			font-family: serif;
+		}
+		.track-list h3 span {
+			font-family: serif;
+			font-size: 16px;
+			font-style: initial;
+			display: inline-block;
+			line-height: 120%;
+		}
+		.track-list h4 {
+			font-family: 'Noto Serif TC', serif;
+			font-size: 18px;
+			font-weight: 400;
+			color: #3A2D3F;
+			text-align: center;
+			position: relative;
+			margin: 30px 0;
+		}
+		.track-list h4::before {
+			content: '';
+			width: 100%;
+			height: 1px;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			background-color: #3A2D3F;
+		}
+		.track-list h4 span {
+			font-size: inherit;
+			font-weight: inherit;
+			background-color: #968CBB;
+			padding: 0 16px;
+			position: relative;
+		}
+		.track-info div:last-child {
+			border-bottom: 3px solid #3A2D3F;
+		}
+		.track {
+			padding-bottom: 30px;
+			border-bottom: 2px solid #3A2D3F;
+			margin-bottom: 30px;
+			position: relative;
+		}
+		.track h2 {
+			font-size: 27px;
+			font-weight: 600;
+			text-align: center;
+			margin: 18px 0 6px;
+		}
+		.track h2.custom {
+			font-family: serif;
+			font-weight: 400;
+		}
+		.track h2 span {
+			display: inline-block;
+		}
+		.track h3 {
+			font-size: 18px;
+			font-weight: 600;
+			text-align: center;
+			margin: 6px 0 18px;
+		}
+		.track p.composer {
+			font-family: serif;
+			font-size: 16px;
+			text-align: right;
+			position: relative;
+			margin-top: 6px;
+			line-height: 120%;
+		}
+		.track p.composer::before {
+			content: '';
+			width: 100%;
+			height: .5px;
+			background-color: #3A2D3F;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		.track p.composer span {
+			font-size: inherit;
+			background-color: #968CBB;
+			position: relative;
+			padding-left: 16px;
+			display: inline-block;
+		}
+		.performer-list .h-row-m [class^='h-col']:first-child p {
+			font-size: 12px;
+			font-weight: 700;
+			margin-bottom: 3px;
+		}
+		.performer-list .h-row-m [class^='h-col']:last-child p {
+			margin-top: 3px;
+		}
+		.performer-list .h-row-m [class^='h-col']:last-child p span {
+			display: inline-block;
+		}
+		.performer-list .h-row-m {
+			border-bottom: .5px solid #3A2D3F;
+		}
+		.performer-list .h-row-m:last-child {
+			border-bottom: none;
+		}
+		@media (min-width: 415px) {
+			.conductor {
+				text-align: right;
+			}
+		}
+		@media (max-width: 414px) {
+			.conductor {
+				text-align: center;
+			}
+		}
+		.conductor img {
+			max-width: 300px;
+			width: 100%;
+			box-shadow: 1px 1px 12px #3A2D3F3D;
+		}
+		.poster {
+			height: 0;
+			padding-bottom: 255%;
+			background-image: url('img/poster.jpg');
+			background-position: left top;
+			background-size: 180% auto;
+			background-repeat: no-repeat;
+			position: relative;
+		}
+		.poster-info {
+			position: absolute;
+			right: 0;
+			top: 66%;
+			width: 88%;
+			text-align: right;
+			background-color: #831B2066;
+			padding: 36px 5% 18px;
+		}
+		.poster-info h1 {
+			font-family: 'Arial', 'Noto Sans TC', '微軟正黑體';
+			font-size: 32px;
+			color: #FFF;
+			text-shadow: 2px 2px 8px #000000;
+			padding-bottom: 8px;
+			border-bottom: 1px solid;
+		}
+		.poster-info p {
+			color: #FFF;
+			text-shadow: 2px 2px 8px #000000;
+			letter-spacing: 0.8px
+		}
+		img.cover {
+			display: block;
+			width: 100%;
+		}
+		.bridge {
+			height: 60px;
+			background-color: #3A2D3F;
+			position: relative;
+		
+		}
+		.footer {
+			background-color: #3A2D3F;
+			padding: 12px 18px;
+		}
+		.footer p {
+			color: #f0EEE8;
+			text-align: center;
+		}
+		.anchor {
+			position: absolute;
+			top: 0px;
+		}
+
+
+		.full-coverage{
+			position: relative;
+			with: 100%;
+			padding-bottom: 170%;
+			background-size: cover;
+		}
+		img {
+			width: 100%;
+		}
+		#cover {
+			background-image: url('img/cover.jpg');
+		}
+		#track-01 {
+			background-image: url('img/track-1.jpg');
+		}
+		#track-02 {
+			background-image: url('img/track-2.jpg');
+		}
+		#track-03 {
+			background-image: url('img/track-3.jpg');
+		}
+		#track-04 {
+			background-image: url('img/track-4.jpg');
+		}
+		#track-05 {
+			background-image: url('img/track-5.jpg');
+		}
+		#track-06 {
+			background-image: url('img/track-6.jpg');
+		}
+		#track-07 {
+			background-image: url('img/track-7.jpg');
+		}
+		</style> 
+	</head>
+	<body>
+		<!-- div class="poster">
+			<div class="poster-info">
+				<h1>華江校友管樂團<br />
+				2021冬季音樂會</h1>
+				<p>02/07 蘆洲功學社音樂廳</p>
+			</div>
+		</div> -->
+		<img src="img/cover.jpg" />
+		<img src="img/about.jpg" />
+
+		<div class="h-container">
+			
+			<div class="page track-list">
+				<h2>曲目介紹</h2>
+				<h3 class="custom" data-track="track-01">The Seventh Night Of July / <br /><span>Music by 酒井格</span></h3>
+				<h3 data-track="track-02">「篤姬」メインテーマ / <br /><span>Music by 吉俣良<br />Arranged by 後藤洋</span></h3>
+				<h3 data-track="track-03">斐伊川に流るるクシナダ姫の涙 / <br /><span>Music by 樽屋雅德</span></h3>
+				<h3 class="custom" data-track="track-04">First Suite in E-flat for Military Band / <br /><span>Music by Gustav Holst<br />Arranged by 伊藤康英</span></h3>
+				<h3 data-track="track-05">巡礼の島 / <br /><span>Music by 酒井格</span></h3>
+				<h4><span>中場休息</span></h4>
+				<h3 data-track="track-06">マードックからの最後の手紙 / <span>Music by 樽屋雅德</span></h3>
+				<h3 data-track="track-07">「鬼滅の刃」メドレー / <br /><span>Arranged by 三浦秀秋</span></h3>
+			</div>
+		</div>
+
+		<div class="full-coverage" id="track-01">
+			<div class="anchor"></div>
+		</div>
+		<div class="full-coverage" id="track-02">
+			<div class="anchor"></div>
+		</div>
+		<div class="full-coverage" id="track-03">
+			<div class="anchor"></div>
+		</div>
+		<div class="full-coverage" id="track-04">
+			<div class="anchor"></div>
+		</div>
+		<div class="full-coverage" id="track-05">
+			<div class="anchor"></div>
+		</div>
+		<div class="full-coverage" id="track-06">
+			<div class="anchor"></div>
+		</div>
+		<div class="full-coverage" id="track-07">
+			<div class="anchor"></div>
+		</div>
+		<img src="img/cast.jpg" />
+		<img src="img/crew.jpg" />
+		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+			$('.track-list h3').on('click', function() {
+				$('html, body').animate({
+					scrollTop: $('#' + $(this).data('track')).offset().top
+				}, 600);
+			});
+		</script>
+	</body>
+</html>
